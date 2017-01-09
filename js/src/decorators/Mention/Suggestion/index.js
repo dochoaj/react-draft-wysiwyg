@@ -211,6 +211,7 @@ function getSuggestionComponent() {
           {showSuggestions &&
             <span
               className={classNames('rdw-suggestion-dropdown', dropdownClassName)}
+              contentEditable="false"
               style={this.state.style}
               ref={this.setDropdownReference}
             >
