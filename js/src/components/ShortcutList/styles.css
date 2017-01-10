@@ -1,0 +1,10 @@
+.rdw-shortcut-list-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.rdw-shortcut-list-wrapper > .Select {
+  width: 164px;
+}

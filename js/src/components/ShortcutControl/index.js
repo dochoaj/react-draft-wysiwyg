@@ -17,21 +17,22 @@ export default class ShortcutControl extends Component {
     return this.renderInFlatList(config);
   }
 
-  toggleShortcut: => {
-    console.log('On click');
+  toggleShortcut: Function = (): void => {
+    console.log(this.props.editorState)
   }
 
-  renderInFlatList(currentStyles, config) {
+  renderInFlatList(config: Object) : Object {
+    const { className, icon } = config;
+
     return (
-      <div className={classNames('rdw-shortcut-wrapper', config.className)}>
+      <div className={classNames('rdw-shortcut-wrapper', className)}>
         <Option
-          value={style.toUpperCase()}
           onClick={this.toggleShortcut}
-          className={className(config.className)}
+          className={classNames(className)}
         >
           <img
             role='presentation'
-            src={config.icon}
+            src={icon}
           />
         </Option>
       </div>

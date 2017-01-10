@@ -39,6 +39,7 @@ import EmojiControl from '../EmojiControl';
 import ImageControl from '../ImageControl';
 import HistoryControl from '../HistoryControl';
 import ShortcutControl from '../ShortcutControl';
+import ShortcutList from '../ShortcutList';
 import LinkDecorator from '../../decorators/Link';
 import getMentionDecorators from '../../decorators/Mention';
 import BlockRendererFunc from '../../renderer';
@@ -367,6 +368,8 @@ export default class WysiwygEditor extends Component {
       image,
       remove,
       history,
+      shortcut,
+      shortcutList,
     } = toolbar;
 
     return (
@@ -470,6 +473,14 @@ export default class WysiwygEditor extends Component {
                 editorState={editorState}
                 onChange={this.onChange}
                 config={shortcut}
+              />}
+              {options.indexOf('shortcutList') >= 0 && <ShortcutList
+                modalHandler={this.modalHandler}
+                editorState={editorState}
+                onChange={this.onChange}
+                config={shortcutList}
+                shortcuts={this.getSuggestions()}
+                afterSelection={this.focusEditor}
               />}
             </div>
           :
