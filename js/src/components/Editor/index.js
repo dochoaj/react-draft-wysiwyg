@@ -38,6 +38,7 @@ import EmbeddedControl from '../EmbeddedControl';
 import EmojiControl from '../EmojiControl';
 import ImageControl from '../ImageControl';
 import HistoryControl from '../HistoryControl';
+import ShortcutControl from '../ShortcutControl';
 import LinkDecorator from '../../decorators/Link';
 import getMentionDecorators from '../../decorators/Mention';
 import BlockRendererFunc from '../../renderer';
@@ -463,6 +464,12 @@ export default class WysiwygEditor extends Component {
                 editorState={editorState}
                 onChange={this.onChange}
                 config={history}
+              />}
+              {options.indexOf('shortcut') >= 0 && <ShortcutControl
+                modalHandler={this.modalHandler}
+                editorState={editorState}
+                onChange={this.onChange}
+                config={shortcut}
               />}
             </div>
           :

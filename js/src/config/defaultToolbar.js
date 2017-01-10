@@ -29,7 +29,7 @@ import superscript from '../../../images/superscript.svg';
 * whatever user passes in toolbar property is deeply merged with this to over-ride defaults.
 */
 export default {
-  options: ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'embedded', 'emoji', 'image', 'remove', 'history'],
+  options: ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'embedded', 'emoji', 'image', 'remove', 'history', 'shortcut'],
   inline: {
     inDropdown: false,
     className: undefined,
@@ -105,4 +105,7 @@ export default {
     undo: { icon: undo, className: undefined },
     redo: { icon: redo, className: undefined },
   },
+  shortcut: {
+    { icon: image, className: undefined }
+  }
 };
