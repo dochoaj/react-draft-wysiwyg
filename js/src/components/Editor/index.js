@@ -480,6 +480,7 @@ export default class WysiwygEditor extends Component {
                 onChange={this.onChange}
                 config={shortcutList}
                 shortcuts={this.getSuggestions()}
+                shortcutConfig={this.props.mention}
                 afterSelection={this.focusEditor}
               />}
             </div>

@@ -192,6 +192,7 @@ function getSuggestionComponent() {
       const { activeOption } = this.state;
       const editorState = config.getEditorState();
       const { onChange, separator, trigger } = config;
+      console.log(this.filteredSuggestions[activeOption]);
       addMention(editorState, onChange, separator, trigger, this.filteredSuggestions[activeOption]); // HERE!
     }
 

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import Select from 'react-select';
-
+import addMention from '../../Decorators/Mention/addMention';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
 import 'react-select/dist/react-select.css';
 
@@ -21,6 +21,12 @@ export default class ShortcutList extends Component {
 
   logChange: Function = (val): void => {
     console.log(val);
+    const editorState = this.props.editorState;
+    const { separator, trigger } = this.props.shortcutConfig;
+
+    addMention(
+      editorState, this.props.onChange, separator, trigger, { text: val, value: val, url: '' }
+    );
   }
 
   onInputKeyDown: Function = (event) : void => {
